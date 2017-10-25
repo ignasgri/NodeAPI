@@ -12,3 +12,15 @@ function listening(){
 }
 //letting use static files images, html etc.
 app.use(express.static("website"));
+
+//get request
+app.get('/search/:flower/:num', sendFlower);
+function sendFlower(request, response) {
+    var data = request.params;
+    var num = data.num;
+    var reply = "";
+    for (var i=0; i< num; i++) {
+        reply += "I love " + data.flower +" too";
+    }
+    response.send(reply);
+}
