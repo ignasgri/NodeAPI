@@ -20,7 +20,12 @@
 9. Create variables `var names` (line 1-5)
 10. Add route to in `server.js` to expose data (names) in json format (line 33-37)
 11. Go to `http://localhost:3000/names`
-12. Add names to 'var = names' list in `server.js` (line 22-34)
-13. Go to http://localhost:3000/add/**<name>**/**<age>** and and change `<>` parameters
+12. Add names to temporaty database in `server.js` (line 22-34)
+13. Go to `http://localhost:3000/add/**<name>**/**<age>**` and and change `<>` parameters
 14. Add searchName function in `server.js`(line 48-65)
 15. Go to `http://localhost:3000/search/<name>`
+##### Saving data to JSON file
+16. Create new file `names.json` in root directory
+17. Move `var = names` from `server.js` to `names.json` (line 1-5)
+18. Import file system package (line 2)
+19. Sync `names.json` file with `server.js` file (line 3)

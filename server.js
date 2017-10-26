@@ -1,9 +1,8 @@
 //hard coded "database"
-var names = {
-    "Mike": 25,
-    "Thomas": 13,
-    "Molly": 17,
-}
+var fs = require('fs');
+var data = fs.readFileSync('names.json');
+var names = JSON.parse(data);
+
 console.log("testing ");
 
 //importing express function to node
