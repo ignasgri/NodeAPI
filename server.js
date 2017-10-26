@@ -1,3 +1,4 @@
+//hard coded "database"
 var names = {
     "Mike": 25,
     "Thomas": 13,
@@ -19,13 +20,21 @@ function listening(){
 app.use(express.static("website"));
 
 //get request
-app.get('/search/:flower/:num', sendFlower);
-function sendFlower(request, response) {
+app.get('/add/:name/:age?', addName);
+function addName(request, response) {
     var data = request.params;
-    var num = data.num;
-    var reply = "";
-    for (var i=0; i< num; i++) {
-        reply += "I love " + data.flower +" too";
+    var name = data.name;
+    var age = Number(data.age);
+    var reply;
+    if (!age) {
+        reply = {
+            msg: "Age is required!"
+        }
+    } else {
+        names[name] = age;
+        reply = {
+            msg: "Name and age was added, thanks you!"
+        }
     }
     response.send(reply);
 }
@@ -34,4 +43,23 @@ function sendFlower(request, response) {
 app.get('/names', sendAll);
 function sendAll(request, response){
     response.send(names);
+}
+
+app.get('/search/:name/', searchName);
+function searchName(request, response) {
+    var name = request.params.name;
+    var reply;
+    if (names[name]) {
+        reply = {
+            status: "Name is in database!",
+            name: name,
+            score: names[name]
+        }   
+    } else {
+        reply = {
+            status: "Name dose not exist in database!",
+            name: name
+        }
+    }
+    response.send(reply);
 }
