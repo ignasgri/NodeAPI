@@ -1,3 +1,8 @@
+var names = {
+    "Mike": 25,
+    "Thomas": 13,
+    "Molly": 17,
+}
 console.log("testing ");
 
 //importing express function to node
@@ -23,4 +28,10 @@ function sendFlower(request, response) {
         reply += "I love " + data.flower +" too";
     }
     response.send(reply);
+}
+
+//expose data (words) in json format
+app.get('/names', sendAll);
+function sendAll(request, response){
+    response.send(names);
 }
