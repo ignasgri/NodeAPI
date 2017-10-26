@@ -2,6 +2,7 @@
 var fs = require('fs');
 var data = fs.readFileSync('names.json');
 var names = JSON.parse(data);
+//console.log(names);
 
 console.log("testing ");
 
@@ -18,7 +19,7 @@ function listening(){
 //letting use static files images, html etc.
 app.use(express.static("website"));
 
-//get request
+//get request (add information)
 app.get('/add/:name/:age?', addName);
 function addName(request, response) {
     var data = request.params;
@@ -26,16 +27,27 @@ function addName(request, response) {
     var age = Number(data.age);
     var reply;
     if (!age) {
-        reply = {
+        var reply = {
             msg: "Age is required!"
         }
+        response.send(reply);
+
     } else {
         names[name] = age;
-        reply = {
-            msg: "Name and age was added, thanks you!"
+        var data = JSON.stringify(names);
+        fs.writeFile('names.json', data, finished);
+
+        function finished(err) {
+            console.log('all set.');
+            reply = {
+                name: name,
+                age: age,
+                status: "Success",
+                msg: "Name and age was added, thanks you!"
+            }
+            response.send(reply);
         }
     }
-    response.send(reply);
 }
 
 //expose data (words) in json format

@@ -21,7 +21,7 @@
 10. Add route to in `server.js` to expose data (names) in json format (line 33-37)
 11. Go to `http://localhost:3000/names`
 12. Add names to temporaty database in `server.js` (line 22-34)
-13. Go to `http://localhost:3000/add/**<name>**/**<age>**` and and change `<>` parameters
+13. Go to `http://localhost:3000/add/**<name>**/**<age>**`  and change `<>` parameters (temporary adding)
 14. Add searchName function in `server.js`(line 48-65)
 15. Go to `http://localhost:3000/search/<name>`
 ##### Saving data to JSON file
@@ -29,3 +29,22 @@
 17. Move `var = names` from `server.js` to `names.json` (line 1-5)
 18. Import file system package (line 2)
 19. Sync `names.json` file with `server.js` file (line 3)
+20. Change (line 37-51) to save names and age into `names.json` file
+```javascript
+var data = JSON.stringify(names);
+        fs.writeFile('names.json', data, finished);
+
+        function finished(err) {
+            console.log('all set.');
+            reply = {
+                name: name,
+                age: age,
+                status: "Success",
+                msg: "Name and age was added, thanks you!"
+            }
+            response.send(reply);
+        }
+    }
+}
+```
+21. Go to `http://localhost:3000/add/**<name>**/**<age>**`  and change `<>` parameters (permanently adding to `names.json` file)
