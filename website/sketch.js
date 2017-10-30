@@ -3,7 +3,16 @@ function setup(){
     background(51);
     loadJSON('names', gotData);
     console.log('running');
+
+    var button = select('#submit');
+    button.mousePressed(submitName);
 }
+function submitName () {
+    var name = select('#name').value();
+    var age = select('#age').value();
+    console.log(name, age);
+}
+
 function gotData(data){
     console.log(data);
     var keys = Object.keys(data);

@@ -48,3 +48,9 @@ var data = JSON.stringify(names);
 }
 ```
 21. Go to `http://localhost:3000/add/**<name>**/**<age>**`  and change `<>` parameters (permanently adding to `names.json` file)
+22. Inport p5.js library and overwrite index.html
+23. Import JSON file with names `sketch.js`(line 3)
+24. Write function to display names in random order on screen (line 7-20)
+25. Create input fields for name and age in index.html
+26. Create button SUBMIT
+27. Add var button to `sketch.js` file to select DOM element with the ID 'submit' (line 7-)
