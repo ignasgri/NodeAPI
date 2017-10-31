@@ -1,6 +1,5 @@
 function setup(){
-    createCanvas(400, 400);
-    background(51);
+    createCanvas(1000, 800);
     loadJSON('names', gotData);
     console.log('running');
 
@@ -12,7 +11,6 @@ function submitName () {
     var age = select('#age').value();
     console.log(name, age);
 }
-
 function gotData(data){
     console.log(data);
     var keys = Object.keys(data);
@@ -22,8 +20,10 @@ function gotData(data){
         var x = random(width);
         var y = random(height);
         fill(255);
-        textSize(30);
+        textSize(15);
         text(name, x, y);
+        fill(224, 22, 22)
+        ellipse(x-10, y-10, 15, 15);
     }
     console.log(keys);
 }
