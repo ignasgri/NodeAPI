@@ -10,15 +10,16 @@ body{
 }
 #defaultCanvas0{
     position: absolute;
-        margin: 70px 100px 0px 150px;
-        /*border: 20px solid rgba(0, 0, 0, 1);*/
-
-        
+        margin: 80px 100px 0px 150px;
+        /*border: 20px solid rgba(0, 0, 0, 1);*/       
 }
-#form{
-    margin: auto;
+.form{
+    margin-top: 250px;
+    margin-left: 20px; 
     font-size: 25px;
     color: white;
+    text-align: center;
+    width: 200px;
 }
 input{
     width: 150px;
@@ -28,13 +29,26 @@ input{
     border: none;
 }
 #submit{
-    margin: 20px;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: red;
+    background-color: #212121;
     font-size: 12px;
     color: white;
-    border: 2px solid black;
+    border: 1px solid #b3b3b3;
     cursor: pointer;
+    font-weight: 900;
+}
+#names{
+    margin-top: 10px;
+    margin-left: -5px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #212121;
+    font-size: 12px;
+    color: white;
+    border: 1px solid #b3b3b3;
+    cursor: pointer;
+    font-weight: 900;
 }

@@ -1,15 +1,25 @@
 function setup(){
-    createCanvas(1000, 800);
-    loadJSON('names', gotData);
+    createCanvas(1000, 750);
+    drawData();
     console.log('running');
 
     var button = select('#submit');
     button.mousePressed(submitName);
 }
+function drawData(){
+    loadJSON('names', gotData);
+}
 function submitName () {
     var name = select('#name').value();
     var age = select('#age').value();
     console.log(name, age);
+
+    loadJSON('add/' + name + '/' + age, finished);
+
+    function finished(data) {
+        console.log(data);
+        // drawData();
+    }
 }
 function gotData(data){
     console.log(data);
