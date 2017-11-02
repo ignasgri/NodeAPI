@@ -27,6 +27,13 @@
 		<a href="javascript:location.reload(true)"><button id="submit">Play</button></a>
 		<br>
 		<a href="/names"><button id="names">All Players</button></a>
+		<br>
+		<a href="#" onclick="myFunction()"><img id="info" src="assets/info.png" width="40px" alt="info"/></a>
 	</div>
+	<script>
+function myFunction() {
+    alert("This is name and age API database build using NODE.js and p5.js libraries. To add your name and age simply fill the input fields and click [Play] (You can add name and age manually like so http://localhost:3000/add/<NAME>/<AGE>). Your name will display as 'dart' on dartboard. Also you can view all names in database just press [All Players].");
+}
+</script>
 </body>
 </html>

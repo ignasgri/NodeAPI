@@ -54,3 +54,8 @@ var data = JSON.stringify(names);
 25. Create input fields for name and age in index.html
 26. Create button SUBMIT
 27. Add var button to `sketch.js` file to select DOM element with the ID 'submit' (line 7-)
+
+### Deploy to server
+1.
+2.
+3.

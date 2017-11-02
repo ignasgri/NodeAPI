@@ -1,5 +1,5 @@
 function setup(){
-    createCanvas(1000, 750);
+    createCanvas(850, 770);
     drawData();
     console.log('running');
 
@@ -33,7 +33,7 @@ function gotData(data){
         textSize(15);
         text(name, x, y);
         fill(224, 22, 22)
-        ellipse(x-10, y-10, 15, 15);
+        ellipse(x+20, y-22, 15, 15);
     }
     console.log(keys);
 }
